@@ -8,8 +8,7 @@ function flatten(arr) {
     if (Array.isArray(arr[i])) {
       flattenedArr = flattenedArr.concat(flatten(arr[i]));
     }
-    // If the element is not an array, append it directly to the output array
-    else {
+        else {
       flattenedArr.push(arr[i]);
     }
   }
