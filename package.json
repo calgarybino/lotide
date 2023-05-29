@@ -1,11 +1,11 @@
 {
-  "name": "package.json",
+  "name": "@biniambino/lotide",
   "version": "1.0.0",
   "main": "assertEqual.js",
   "scripts": {
     "test": "mocha"
   },
-  "author": "",
+  "author": "biniam",
   "license": "ISC",
   "devDependencies": {
     "chai": "^4.3.7",
@@ -24,5 +24,6 @@
     "url": "https://github.com/calgarybino/lotide/issues"
   },
   "homepage": "https://github.com/calgarybino/lotide#readme",
-  "description": ""
+  "description": "Lab test",
+  "dependencies": {}
 }

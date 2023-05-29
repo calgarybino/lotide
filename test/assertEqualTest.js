@@ -1,5 +1,6 @@
 const assertEqual = require("../assertEqual");
-
+const actual = "Lighthouse Labs";
+const expected = "Bootcamp";
 if (actual === expected) {
   console.log(`Assertion Passed: ${actual} === ${expected}`);
 } else {
