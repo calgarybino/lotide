@@ -1,7 +1,7 @@
 {
   "name": "@biniambino/lotide",
-  "version": "1.0.0",
-  "main": "assertEqual.js",
+  "version": "1.1.1",
+  "main": "index.js",
   "scripts": {
     "test": "mocha"
   },

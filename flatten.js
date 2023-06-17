@@ -1,17 +1,41 @@
-function flatten(arr) {
-  // Create an empty array to hold the flattened elements
-  let flattenedArr = [];
+const assertEqual = function (actual, expected) {
+  if (eqArrays(actual, expected)) {
+    console.log(`Assertion Passed: ${actual} === ${expected}`);
+  } else {
+    console.log(`Assertion Failed: ${actual} !== ${expected}`);
+  }
+};
 
-  // Iterate through each element in the input array
-  for (let i = 0; i < arr.length; i++) {
-    // If the element is an array, recursively flatten it and concatenate its elements to the output array
-    if (Array.isArray(arr[i])) {
-      flattenedArr = flattenedArr.concat(flatten(arr[i]));
-    }
-        else {
-      flattenedArr.push(arr[i]);
+const eqArrays = function (array1, array2) {
+  if (array1.length !== array2.length) {
+    return false;
+  }
+
+  for (let i = 0; i < array1.length; i++) {
+    if (array1[i] !== array2[i]) {
+      return false;
     }
   }
-  return flattenedArr;
-}
-console.log(flatten([1, 2, [3, 4], 5, [6]]));
+
+  return true;
+};
+
+const flatten = function (array) {
+  let flattenedArray = [];
+
+  for (let element of array) {
+    if (Array.isArray(element)) {
+      flattenedArray = flattenedArray.concat(flatten(element));
+    } else {
+      flattenedArray.push(element);
+    }
+  }
+
+  return flattenedArray;
+};
+
+const inputArray = [1, 2, [3, 4], 5, [6]];
+const expectedOutput = [1, 2, 3, 4, 5, 6];
+
+const flattened = flatten(inputArray);
+assertEqual(flattened, expectedOutput);
