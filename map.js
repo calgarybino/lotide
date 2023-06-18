@@ -1,29 +1,10 @@
-// Helper function to compare arrays for equality
-const eqArrays = function (arr1, arr2) {
-  if (arr1.length !== arr2.length) {
-    return false;
-  }
-  for (let i = 0; i < arr1.length; i++) {
-    if (arr1[i] !== arr2[i]) {
-      return false;
-    }
-  }
-  return true;
-};
-
-// Function to assert whether two arrays are equal
-const assertArraysEqual = function (actual, expected) {
-  if (eqArrays(actual, expected)) {
-    console.log(`✅ Assertion Passed: [${actual}] === [${expected}]`);
-  } else {
-    console.log(`❌ Assertion Failed: [${actual}] !== [${expected}]`);
-  }
-};
+const eqArrays = require("./eqArrays");
+const assertArraysEqual = require("./assertArraysEqual");
 const map = function (array, callback) {
   const results = [];
   for (let item of array) {
     results.push(callback(item));
-  } 
+  }
   return results;
 };
 
@@ -41,3 +22,4 @@ assertArraysEqual(results2, [1, 4, 9, 16, 25]);
 const strings = ["hello", "world", "map", "function"];
 const results3 = map(strings, (str) => str.toUpperCase());
 assertArraysEqual(results3, ["HELLO", "WORLD", "MAP", "FUNCTION"]);
+module.exports = map;

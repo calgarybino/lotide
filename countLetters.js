@@ -1,25 +1,34 @@
-const assertEqual = function (actual, expected) {
-  if (actual === expected) {
-    console.log(`Assertion Passed: ${actual} === ${expected}`);
-    return true;
-  } else {
-    console.log(`Assertion Failed: ${actual} !== ${expected}`);
-    return false;
-  }
-};
+const assertEqual = require("./assertEqual");
 
-const countLetters = function (sentence) {
-  const letterCounts = {};
-
-  for (let char of sentence) {
-    if (/[a-zA-Z]/.test(char)) {
-      letterCounts[char] = (letterCounts[char] || 0) + 1;
+function countLetters(str) {
+  let letterCount = {};
+  for (let i = 0; i < str.length; i++) {
+    const char = str[i];
+    if (char !== " ") {
+      if (letterCount[char]) {
+        letterCount[char]++;
+      } else {
+        letterCount[char] = 1;
+      }
     }
   }
+  return letterCount;
+}
 
-  return letterCounts;
-};
+// Test cases
+const result1 = countLetters("hello");
+assertEqual(result1["h"], 1);
+assertEqual(result1["e"], 1);
+assertEqual(result1["l"], 2);
+assertEqual(result1["o"], 1);
 
-const sentence = "LHL";
-const result = countLetters(sentence);
-console.log(result);
+const result2 = countLetters("hello world");
+assertEqual(result2["h"], 1);
+assertEqual(result2["e"], 1);
+assertEqual(result2["l"], 3);
+assertEqual(result2["o"], 2);
+assertEqual(result2["w"], 1);
+assertEqual(result2["r"], 1);
+assertEqual(result2["d"], 1);
+
+module.exports = countLetters;
