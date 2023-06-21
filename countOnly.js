@@ -1,7 +1,4 @@
 const assertEqual = require("./assertEqual");
-// TEST CODE
-assertEqual("Lighthouse Labs", "Bootcamp");
-assertEqual(1, 1);
 const countOnly = function (allItems, itemsToCount) {
   const results = {};
   for (const item of allItems) {
