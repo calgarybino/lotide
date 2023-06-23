@@ -14,4 +14,4 @@ const array3 = [1, 2, 3];
 const array4 = [1, 2, 4];
 assertArraysEqual(array3, array4);
 
-// module.exports = assertArraysEqual;
+module.exports = assertArraysEqual;
