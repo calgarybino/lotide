@@ -16,6 +16,8 @@ const middle = (array) => {
     return [array[middleIndex]];
   }
 };
+//I declare those variable more the code to be readable otherwise
+// I can pass the expected output
 const expectedOutput1 = [];
 const expectedOutput2 = [];
 const expectedOutput3 = [2];
