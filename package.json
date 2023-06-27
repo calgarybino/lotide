@@ -1,6 +1,6 @@
 {
   "name": "@biniambino/lotide",
-  "version": "1.1.1",
+  "version": "1.0.0",
   "main": "index.js",
   "scripts": {
     "test": "mocha"
@@ -24,6 +24,8 @@
     "url": "https://github.com/calgarybino/lotide/issues"
   },
   "homepage": "https://github.com/calgarybino/lotide#readme",
-  "description": "Lab test",
-  "dependencies": {}
+  "description": "Lotide project",
+  "dependencies": {
+    "chalk": "^4.1.2"
+  }
 }
