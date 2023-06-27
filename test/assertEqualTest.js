@@ -1,7 +1,7 @@
 const assertEqual = require("../assertEqual");
-const actual = "Lighthouse Labs";
-const expected = "Bootcamp";
 
 // TEST CODE
-assertEqual("Lighthouse Labs", "Bootcamp");
+const actual = "Lighthouse Labs";
+const expected = "Bootcamp";
+assertEqual(actual, expected);
 assertEqual(1, 1);
